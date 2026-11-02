@@ -1,0 +1,734 @@
+
+/* =====================================
+   MINI AI PRO - MAIN STYLING
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fa;
+    color: #202938;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar {
+    width: 250px;
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.logo h2 {
+    font-size: 19px;
+}
+
+.logo span {
+    color: #64748b;
+}
+
+.logo-icon {
+    background: #202938;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.new-chat {
+    padding: 13px;
+    background: #202938;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 30px;
+    transition: 0.2s;
+}
+
+.new-chat:hover {
+    background: #374151;
+}
+
+.menu-heading {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.menu-item {
+    padding: 13px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background: #f0f2f5;
+    color: #202938;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    background: #e5e7eb;
+    padding: 10px 13px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.profile strong {
+    display: block;
+    font-size: 13px;
+}
+
+.profile small {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* =====================================
+   MAIN AREA
+===================================== */
+
+.main {
+    flex: 1;
+    min-width: 0;
+}
+
+.topbar {
+    height: 80px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar h3 {
+    font-size: 17px;
+}
+
+.topbar p {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+.status {
+    background: #f1f5f9;
+    padding: 9px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #16a34a;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* =====================================
+   PAGES
+===================================== */
+
+.page {
+    height: calc(100vh - 80px);
+    position: relative;
+    overflow-y: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =====================================
+   WELCOME SECTION
+===================================== */
+
+.welcome {
+    max-width: 700px;
+    margin: 90px auto 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.welcome-icon {
+    width: 55px;
+    height: 55px;
+    margin: auto;
+    background: #202938;
+    color: white;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+}
+
+.welcome h1 {
+    margin-top: 22px;
+    font-size: 28px;
+}
+
+.welcome p {
+    color: #94a3b8;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.suggestions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.suggestions button {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 17px 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.suggestions button:hover {
+    border-color: #94a3b8;
+    background: #fafafa;
+}
+
+.suggestions strong {
+    display: block;
+    font-size: 12px;
+}
+
+.suggestions small {
+    display: block;
+    color: #94a3b8;
+    margin-top: 8px;
+    font-size: 11px;
+}
+
+/* =====================================
+   CHAT MESSAGES
+===================================== */
+
+.chat-messages {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 150px;
+    overflow-y: auto;
+    max-height: calc(100vh - 270px);
+}
+
+.message {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.user-message {
+    background: #e9edf2;
+    padding: 13px 17px;
+    border-radius: 14px 14px 2px 14px;
+    max-width: 80%;
+    margin-left: auto;
+    width: fit-content;
+    overflow-wrap: anywhere;
+}
+
+.ai-message {
+    padding: 13px 5px;
+    color: #334155;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   INPUT AREA
+===================================== */
+
+.input-area {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, #f7f8fa 20%);
+}
+
+.input-box {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border: 1px solid #dfe3e8;
+    border-radius: 14px;
+    padding: 8px 10px 8px 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+}
+
+.input-box input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.input-box button {
+    width: 38px;
+    height: 38px;
+    background: #202938;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.input-box button:hover {
+    background: #374151;
+}
+
+.disclaimer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 10px;
+    margin-top: 12px;
+}
+
+/* =====================================
+   OTHER PAGES
+===================================== */
+
+.simple-page {
+    padding: 45px;
+}
+
+.simple-page h1 {
+    font-size: 26px;
+}
+
+.simple-page p {
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+.placeholder {
+    margin-top: 30px;
+    padding: 35px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =====================================
+   CHAT HISTORY
+===================================== */
+
+#history-list {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.history-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.history-open {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    color: #202938;
+    overflow-wrap: anywhere;
+    padding: 8px;
+}
+
+.history-open:hover {
+    color: #64748b;
+}
+
+.history-delete {
+    border: none;
+    background: #fff0f0;
+    color: #dc2626;
+    padding: 9px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    flex-shrink: 0;
+    transition: 0.2s;
+}
+
+.history-delete:hover {
+    background: #fee2e2;
+}
+
+.clear-history {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.clear-history:hover {
+    background: #b91c1c;
+}
+
+/* =====================================
+   SCIENTIFIC CALCULATOR
+===================================== */
+
+.calculator-page {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.scientific-calculator {
+    width: 100%;
+    max-width: 760px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+/* DISPLAY */
+
+.calculator-display {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.calculator-label {
+    font-size: 10px;
+    color: #94a3b8;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+#calc-display {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #202938;
+    text-align: right;
+    font-size: 34px;
+    font-weight: bold;
+    padding: 20px 0 12px;
+}
+
+#calc-status {
+    text-align: right;
+    color: #94a3b8;
+    font-size: 12px;
+    min-height: 16px;
+    overflow-wrap: anywhere;
+}
+
+/* SETTINGS */
+
+.calculator-settings {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+#angle-mode {
+    padding: 8px 16px;
+    background: #202938;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#angle-mode:hover {
+    background: #475569;
+}
+
+.calculator-info {
+    margin-left: auto;
+    color: #94a3b8;
+}
+
+/* BUTTON GRID */
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.calculator-grid button {
+    min-height: 58px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.calculator-grid button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+
+.calculator-grid button:active {
+    transform: scale(0.96);
+}
+
+/* NUMBER BUTTONS */
+
+.calc-number {
+    background: #f8fafc;
+    color: #202938;
+}
+
+.calc-number:hover {
+    background: #e9edf2;
+}
+
+/* SCIENTIFIC BUTTONS */
+
+.calc-function {
+    background: #eef2f6;
+    color: #475569;
+}
+
+.calc-function:hover {
+    background: #dfe6ee;
+}
+
+/* CLEAR BUTTON */
+
+.calc-danger {
+    background: #fff0f0;
+    color: #dc2626;
+    border-color: #fecaca !important;
+}
+
+.calc-danger:hover {
+    background: #fee2e2;
+}
+
+/* EQUAL BUTTON */
+
+.calc-equal {
+    background: #202938;
+    color: white;
+    border-color: #202938 !important;
+}
+
+.calc-equal:hover {
+    background: #475569;
+}
+
+.zero-button {
+    grid-column: span 2;
+}
+
+.calculator-footer {
+    text-align: center;
+    color: #a1aab8;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 22px;
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 175px;
+        padding: 15px 10px;
+    }
+
+    .logo h2 {
+        font-size: 14px;
+    }
+
+    .suggestions {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        margin-top: 35px;
+    }
+
+    .welcome h1 {
+        font-size: 22px;
+    }
+
+    .topbar {
+        padding: 12px;
+    }
+
+    .simple-page {
+        padding: 20px;
+    }
+
+    .history-item {
+        padding: 10px;
+    }
+
+    .history-delete {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .scientific-calculator {
+        padding: 14px;
+    }
+
+    .calculator-grid {
+        gap: 7px;
+    }
+
+    .calculator-grid button {
+        min-height: 48px;
+        font-size: 14px;
+    }
+
+    #calc-display {
+        font-size: 27px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .sidebar {
+        width: 135px;
+        padding: 12px 7px;
+    }
+
+    .logo h2 {
+        font-size: 12px;
+    }
+
+    .menu-item {
+        font-size: 11px;
+        padding: 10px 5px;
+    }
+
+    .new-chat {
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+
+    .status {
+        font-size: 10px;
+        padding: 7px;
+    }
+
+    .topbar h3 {
+        font-size: 14px;
+    }
+
+    .calculator-page {
+        padding: 15px 10px;
+    }
+
+    .calculator-grid {
+        gap: 5px;
+    }
+
+    .calculator-grid button {
+        min-height: 43px;
+        font-size: 12px;
+    }
+
+    .calculator-settings {
+        gap: 7px;
+        font-size: 10px;
+    }
+
+}

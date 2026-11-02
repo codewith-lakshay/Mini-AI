@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINI AI PRO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+            <h2>MINI AI <span>PRO</span></h2>
+        </div>
+
+        <button class="new-chat" onclick="newChat()">
+            + New Chat
+        </button>
+
+        <p class="menu-heading">WORKSPACE</p>
+
+        <button class="menu-item active" onclick="showPage('chat')">
+            💬 &nbsp; AI Chat
+        </button>
+
+        <button class="menu-item" onclick="showPage('knowledge')">
+            ◈ &nbsp; Knowledge Base
+        </button>
+
+        <button class="menu-item" onclick="showPage('calculator')">
+            ⊞ &nbsp; Scientific Calculator
+        </button>
+
+        <button class="menu-item" onclick="showPage('history')">
+            ◷ &nbsp; Chat History
+        </button>
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">M</div>
+                <div>
+                    <strong>MINI AI</strong>
+                    <small>Personal Assistant</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h3 id="page-title">AI Chat</h3>
+                <p>Your intelligent personal assistant</p>
+            </div>
+
+            <div class="status">
+                <span class="dot"></span>
+                C Backend Connected
+            </div>
+
+        </header>
+
+
+        <!-- CHAT PAGE -->
+        <section id="chat-page" class="page">
+
+            <div class="welcome" id="welcome">
+
+                <div class="welcome-icon">✦</div>
+
+                <h1>How can I help you today?</h1>
+
+                <p>
+                    Ask me anything or choose a suggestion below.
+                </p>
+
+                <div class="suggestions">
+
+                    <button onclick="suggest('What is C programming?')">
+                        <strong>💻 Learn Programming</strong>
+                        <small>Explore computer concepts</small>
+                    </button>
+
+                    <button onclick="suggest('Tell me a joke')">
+                        <strong>✨ Something Fun</strong>
+                        <small>Get an interesting joke</small>
+                    </button>
+
+                    <button onclick="suggest('What can you do?')">
+                        <strong>🤖 Explore MINI AI</strong>
+                        <small>Discover assistant features</small>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div id="chat-messages" class="chat-messages"></div>
+
+            <!-- INPUT AREA -->
+            <div class="input-area">
+
+                <div class="input-box">
+
+                    <input
+                        type="text"
+                        id="user-input"
+                        placeholder="Message MINI AI..."
+                        autocomplete="off"
+                    >
+
+                    <button id="send-btn" onclick="sendMessage()">
+                        ➤
+                    </button>
+
+                </div>
+
+                <p class="disclaimer">
+                    MINI AI PRO can make mistakes. Verify important information.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- KNOWLEDGE BASE PAGE -->
+        <section id="knowledge-page" class="page hidden">
+
+            <div class="simple-page">
+
+                <h1>Knowledge Base</h1>
+
+                <p>
+                    Teach MINI AI new questions and answers.
+                </p>
+
+                <div class="placeholder">
+
+                    <h2>➕ Add New Knowledge</h2>
+
+                    <p>Enter a question and its answer below.</p>
+
+                    <label for="knowledge-question">
+                        Question
+                    </label>
+
+                    <input
+                        type="text"
+                        id="knowledge-question"
+                        placeholder="Example: What is cloud computing?"
+                    >
+
+                    <label for="knowledge-answer">
+                        Answer
+                    </label>
+
+                    <textarea
+                        id="knowledge-answer"
+                        placeholder="Write the answer here..."
+                        rows="5"
+                    ></textarea>
+
+                    <button
+                        id="save-knowledge-btn"
+                        onclick="addKnowledge()"
+                    >
+                        Save Knowledge
+                    </button>
+
+                    <p id="knowledge-status"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCIENTIFIC CALCULATOR PAGE -->
+        <section id="calculator-page" class="page hidden">
+
+            <div class="simple-page calculator-page">
+
+                <h1>Scientific Calculator</h1>
+
+                <p>
+                    Perform basic and advanced mathematical calculations.
+                </p>
+
+                <div class="scientific-calculator">
+
+                    <!-- CALCULATOR DISPLAY -->
+                    <div class="calculator-display">
+
+                        <div class="calculator-label">
+                            MINI AI PRO CALCULATOR
+                        </div>
+
+                        <input
+                            type="text"
+                            id="calc-display"
+                            placeholder="0"
+                            readonly
+                        >
+
+                        <div id="calc-status">
+                            Ready to calculate
+                        </div>
+
+                    </div>
+
+
+                    <!-- ANGLE MODE -->
+                    <div class="calculator-settings">
+
+                        <span>Angle Mode</span>
+
+                        <button
+                            id="angle-mode"
+                            onclick="calcToggleAngle()"
+                        >
+                            DEG
+                        </button>
+
+                        <span class="calculator-info">
+                            Scientific Mode
+                        </span>
+
+                    </div>
+
+
+                    <!-- SCIENTIFIC BUTTONS -->
+                    <div class="calculator-grid">
+
+                        <!-- ROW 1 -->
+                        <button class="calc-function" onclick="calcPress('sin(')">sin</button>
+                        <button class="calc-function" onclick="calcPress('cos(')">cos</button>
+                        <button class="calc-function" onclick="calcPress('tan(')">tan</button>
+                        <button class="calc-function" onclick="calcPress('log(')">log</button>
+                        <button class="calc-function" onclick="calcPress('ln(')">ln</button>
+
+                        <!-- ROW 2 -->
+                        <button class="calc-function" onclick="calcPress('sqrt(')">√</button>
+                        <button class="calc-function" onclick="calcPress('^2')">x²</button>
+                        <button class="calc-function" onclick="calcPress('^')">xʸ</button>
+                        <button class="calc-function" onclick="calcPress('!')">x!</button>
+                        <button class="calc-function" onclick="calcPress('(')">(</button>
+
+                        <!-- ROW 3 -->
+                        <button class="calc-function" onclick="calcPress(')')">)</button>
+                        <button class="calc-function" onclick="calcPress('pi')">π</button>
+                        <button class="calc-function" onclick="calcPress('e')">e</button>
+                        <button class="calc-function" onclick="calcPress('%')">%</button>
+                        <button class="calc-function" onclick="calcPress('/')">÷</button>
+
+                        <!-- ROW 4 -->
+                        <button class="calc-number" onclick="calcPress('7')">7</button>
+                        <button class="calc-number" onclick="calcPress('8')">8</button>
+                        <button class="calc-number" onclick="calcPress('9')">9</button>
+                        <button class="calc-function" onclick="calcPress('*')">×</button>
+                        <button class="calc-danger" onclick="calcClear()">AC</button>
+
+                        <!-- ROW 5 -->
+                        <button class="calc-number" onclick="calcPress('4')">4</button>
+                        <button class="calc-number" onclick="calcPress('5')">5</button>
+                        <button class="calc-number" onclick="calcPress('6')">6</button>
+                        <button class="calc-function" onclick="calcPress('-')">−</button>
+                        <button class="calc-function" onclick="calcDelete()">DEL</button>
+
+                        <!-- ROW 6 -->
+                        <button class="calc-number" onclick="calcPress('1')">1</button>
+                        <button class="calc-number" onclick="calcPress('2')">2</button>
+                        <button class="calc-number" onclick="calcPress('3')">3</button>
+                        <button class="calc-function" onclick="calcPress('+')">+</button>
+                        <button class="calc-equal" onclick="calcCalculate()">=</button>
+
+                        <!-- ROW 7 -->
+                        <button class="calc-number zero-button" onclick="calcPress('0')">0</button>
+                        <button class="calc-number" onclick="calcPress('.')">.</button>
+                        <button class="calc-function" onclick="calcPress('Ans')">Ans</button>
+                        <button class="calc-function" onclick="calcPress('^0.5')">½ Power</button>
+
+                    </div>
+
+                    <p class="calculator-footer">
+                        MINI AI PRO • Scientific Calculator
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHAT HISTORY PAGE -->
+        <section id="history-page" class="page hidden">
+
+            <div class="simple-page">
+
+                <h1>Chat History</h1>
+
+                <p>Your previous conversations are saved here.</p>
+
+                <button
+                    class="clear-history"
+                    onclick="clearAllHistory()"
+                >
+                    🗑 Clear All History
+                </button>
+
+                <div id="history-list"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="app.js"></script>
+
+</body>
+</html>

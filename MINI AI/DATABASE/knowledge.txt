@@ -1,0 +1,31 @@
+
+hello|Hello! Welcome to MINI AI. How can I help you?
+hi|Hi! How can I help you today?
+your name|I am MINI AI, your personal virtual assistant.
+who created you|I was created using C, HTML, CSS and JavaScript.
+how are you|I am doing great! Thanks for asking.
+what is c|C is a powerful general-purpose programming language.
+what is computer|A computer is an electronic device that processes data.
+what is html|HTML stands for HyperText Markup Language.
+what is css|CSS is used to style web pages.
+what is javascript|JavaScript makes websites interactive.
+what is python|Python is a high-level programming language.
+what is internet|The Internet is a global network of connected computers.
+what is operating system|An operating system manages computer hardware and software.
+what is ram|RAM is temporary memory used by a computer.
+what is rom|ROM is non-volatile memory.
+what is keyboard|A keyboard is an input device.
+what is mouse|A mouse is a pointing input device.
+what is cpu|CPU stands for Central Processing Unit.
+what is database|A database stores and organizes information.
+what is algorithm|An algorithm is a step-by-step procedure to solve a problem.
+what is flowchart|A flowchart is a graphical representation of an algorithm.
+what is bca|BCA stands for Bachelor of Computer Applications.
+what is software|Software is a set of programs that instructs a computer.
+what is hardware|Hardware refers to the physical parts of a computer.
+what is ai|AI stands for Artificial Intelligence.
+what is machine learning|Machine learning allows computers to learn patterns from data.
+what is cloud computing|Cloud computing provides computing services over the Internet.
+hello cister|hello lakshay op bhai
+who made you|lakshayy   babuuuu
+hello how are you bro|i am fine bro thankyou
